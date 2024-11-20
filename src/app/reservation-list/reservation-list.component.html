@@ -1,38 +1,30 @@
 <app-home></app-home>
 
-<h3 class="mt-5 mb-3">Reservation List</h3>
-
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Guest</th>
-            <th>Email</th>
-            <th>Room No.</th>
-            <th>Check-In</th>
-            <th>Check-Out</th>
-            <th>Actions</th>
+            <th>Nombre</th>
+            <th>País</th>
+            <th>Dirección</th>
+            <th>Aforo</th>
+            <th>Pisos</th>
         </tr>
+
     </thead>
     <tbody>
-        <tr *ngFor="let reservation of reservations">
-            <td>{{reservation.guestName}}</td>
-            <td>{{reservation.guestEmail}}</td>
-            <td>{{reservation.roomNumber}}</td>
-            <td> {{reservation.checkInDate}} </td>
-            <td>{{reservation.checkOutDate}}</td>
-            <td>
-                <button class="btn btn-sm btn-danger mx-1" (click)="deleteReservation(reservation.id)">Delete</button>
-                <button class="btn btn-sm btn-secondary mx-1" [routerLink]="['/edit', reservation.id]">Edit</button>
-            </td>
-        </tr>
+        <ng-container *ngIf="!isLoading">
+            <tr *ngFor="let reservation of sedes">
+                <td>{{reservation.name}}</td>
+                <td>{{reservation.country}}</td>
+                <td>{{reservation.adress}}</td>
+                <td> {{reservation.capacity}} </td>
+                <td>{{reservation.floorNumber}}</td>
+            </tr>
+        </ng-container>
+
+        <ng-container *ngIf="isLoading">
+            Cargando...
+        </ng-container>
+
     </tbody>
 </table>
-
-<ul *ngIf="reservations.length; else noReservation">
-
-</ul>
-
-<ng-template #noReservation>
-    <p>No reservation available.</p>
-</ng-template>
-
