@@ -1,14 +1,34 @@
+
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ReservationFormComponent } from './reservation-form/reservation-form.component';
-import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
 const routes: Routes = [
-  {path:"", component: HomeComponent},
-  {path:"list", component: ReservationListComponent},
-  {path:"new", component: ReservationFormComponent},
-  {path:"edit/:id", component:ReservationFormComponent}
+  { 
+    path: '', 
+    redirectTo: 'home', 
+    pathMatch: 'full' 
+  },
+  { 
+    path: 'home', 
+    loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule) 
+  },
+  { 
+    path: 'sedes', 
+    loadChildren: () => import('./views/sedes/sedes.module').then(m => m.SedesModule)
+  },
+  { 
+    path: 'detalle-sede/:id', 
+    loadChildren: () => import('./views/detalle-sede/detalle-sede.module').then(m => m.DetalleSedeModule)
+  },
+  { 
+    path: 'nueva-sede', 
+    loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule)
+  },
+  { 
+    path: 'editar-sede/:id', 
+    loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule)
+  }
 ];
 
 @NgModule({

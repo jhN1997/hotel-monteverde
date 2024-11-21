@@ -1,0 +1,23 @@
+.img-container {
+    width: 100px;
+    img {
+        width: 100%;
+    }
+};
+
+.navbar-wrapper {
+    //justify-content: center;
+};
+
+.navbar-nav {
+    flex-flow: row nowrap;
+    gap: 8px;
+};
+
+nav {
+    flex-flow: row nowrap;
+};
+
+.container-header-wrapper {
+    flex-flow: row nowrap;
+}

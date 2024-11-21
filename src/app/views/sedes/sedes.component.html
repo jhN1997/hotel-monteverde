@@ -1,0 +1,45 @@
+<!--
+<app-home></app-home>
+-->
+
+<ng-container *ngIf="isLoading">
+    <div class="spinner-wrapper">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+</ng-container>
+
+
+<div class="container-fluid view-wrapper" *ngIf="!isLoading">
+    <h3>Nuestras sedes</h3>
+    <br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>País</th>
+                <th>Dirección</th>
+                <th>Aforo</th>
+                <th>Pisos</th>
+            </tr>
+    
+        </thead>
+        <tbody>
+            <ng-container>
+                <ng-container *ngFor="let reservation of sedes">
+                    <tr class="row-list" (click)="rowClicked(reservation)">
+                        <td>{{reservation.name}}</td>
+                        <td>{{reservation.country}}</td>
+                        <td>{{reservation.adress}}</td>
+                        <td> {{reservation.capacity}} </td>
+                        <td>{{reservation.floorNumber}}</td>
+                    </tr>
+                </ng-container>
+                
+
+            </ng-container>
+
+        </tbody>
+    </table>
+    
+</div>
+

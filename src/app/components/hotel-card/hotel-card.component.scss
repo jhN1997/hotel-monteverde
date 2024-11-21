@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+};
+
+.card {
+    max-height: 600px
+};
+
+.body-wrapper {
+    overflow: auto;
+}
+
+.card-text {
+    font-size: 0.8rem;
+}

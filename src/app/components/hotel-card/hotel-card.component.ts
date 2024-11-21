@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Sede } from '../models';
+import { Sede } from 'src/app/models';
 
 @Component({
   selector: 'app-hotel-card',
@@ -16,7 +15,7 @@ export class HotelCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    console.log('sede', this.sede)
 
   }
 

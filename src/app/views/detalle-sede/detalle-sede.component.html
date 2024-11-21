@@ -1,0 +1,68 @@
+ 
+<!-- 
+
+{
+    "id": 1,
+    "name": "Porto Cristo, Mallorca",
+    "description": "Este hotel de categoría media está situado en Porto Cristo, a 10 minutos de la playa (unos 800 metros) y del centro de la localidad. En los alrededores del hotel podrá encontrar zonas comerciales con tiendas, boutiques, bares y restaurantes. A dos pasos están las famosas Cuevas del Drac. Este hotel, renovado en el año 2000, tiene un edificio principal de 7 plantas con un total de 7 habitaciones individuales, 113 dobles y 27 suites. El hotel dispone de un área de recepción abierta las 24 horas del día. Cuenta además con un bar, un pub, una sala de televisión y un restaurante. Podrá usar la terminal de Internet (bajo cargo adicional), el servicio de lavandería y el parque infantil. Las confortables habitaciones disponen de baño, teléfono de línea directa, caja fuerte, calefacción central y balcón o terraza. El hotel se enorgullece de su piscina al aire libre, chiringuito, pistas de tenis y programa de entretenimiento tanto para los más jóvenes como para los mayores. Se ofrece desayuno de bufet.",
+    "capacity": "1200",
+    "floorNumber": "15",
+    "adress": "Ctra. Cuevas de Drach, S/N,PORTO CRISTO 07680",
+    "photo": "https://photos.hotelbeds.com/giata/bigger/00/001857/001857a_hb_a_013.jpg",
+    "country": "España"
+}
+
+-->
+ 
+ <!-- Page content-->
+
+<ng-container *ngIf="isLoading">
+    <div class="spinner-wrapper">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+</ng-container>
+
+ <div class="container mt-5" *ngIf="!isLoading">
+
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Post content-->
+            <article>
+                <!-- Post header-->
+                <header class="mb-4">
+                    <!-- Post title-->
+                    <h1 class="fw-bolder mb-1">Bienvenid&#64; a Hotel Monteverde - {{sede.name}} !</h1>
+                    <!-- Post meta content-->
+                    <div class="text-muted fst-italic mb-2">{{sede.country}} - {{sede.adress}}</div>
+                    <!-- Post categories-->
+                    <a class="badge bg-secondary text-decoration-none link-light">Piscina al aire libre</a>
+                    <a class="badge bg-secondary text-decoration-none link-light">Traslado aeropuerto</a>
+                    <a class="badge bg-secondary text-decoration-none link-light">Servicio de habitaciones</a>
+                    <a class="badge bg-secondary text-decoration-none link-light">Parking</a>
+                    <a class="badge bg-secondary text-decoration-none link-light">WiFi</a>
+                    <a class="badge bg-secondary text-decoration-none link-light">Cafetera</a>
+                    <a class="badge bg-secondary text-decoration-none link-light">Bar</a>
+                </header>
+                <!-- Preview image figure-->
+                <figure class="mb-4"><img class="img-fluid rounded" [src]="sede.photo" /></figure>
+                <!-- Post content-->
+                <section class="mb-5">
+                    <p class="fs-5 mb-4">{{sede.description}}</p>
+                </section>
+            </article>
+            <!-- Comments section-->
+
+        </div>
+        <!-- Side widgets-->
+        <div class="col-lg-4">
+            <!-- Categories widget-->
+            <ul class="list-group mb-4">
+                <li class="list-group-item active">Información:</li>
+                <li class="list-group-item"><strong>País:</strong> {{sede.country}}</li>
+                <li class="list-group-item"><strong>Aforo:</strong> {{sede.capacity}}</li>
+                <li class="list-group-item"><strong>Pisos:</strong> {{sede.floorNumber}}</li>
+            </ul>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,22 @@
+.view-wrapper {
+    padding-top: 1.5rem;
+};
+
+.row-list {
+    cursor: pointer;
+    &:hover {
+        color: lightgreen !important;
+    }
+};
+
+.badge.bg-secondary {
+    margin-right: 8px;
+};
+
+.spinner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+}
